@@ -6,6 +6,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Button;
 import android.view.View;
+import android.text.TextUtils;
+
 
 public class activity2 extends AppCompatActivity {
     private EditText editor1,editor2,editor3;;
@@ -43,108 +45,76 @@ public class activity2 extends AppCompatActivity {
                 rok = Integer.parseInt(editor3.getText().toString());
 
 
-                if (miesiac == 1)
 
+
+
+                if(dzien>31 || dzien<0 || miesiac>12 ||miesiac<0 || rok<0)
                 {
-                    iledni = 31;
-                    ilezostalo = iledni - dzien;
-
-
+                    text.setText("nieprawidlowa data");
                 }
+                else {
 
-                else if (miesiac == 2)
-                {
-                    if (rok % 4 == 0) {
-                        iledni = 29;
+                    if (miesiac == 1) {
+                        iledni = 31;
                         ilezostalo = iledni - dzien;
 
 
-                    } else {
-                        iledni = 28;
+                    } else if (miesiac == 2) {
+                        if (rok % 4 == 0) {
+                            iledni = 29;
+                            ilezostalo = iledni - dzien;
+
+
+                        } else {
+                            iledni = 28;
+                            ilezostalo = iledni - dzien;
+                        }
+
+                    } else if (miesiac == 3) {
+
+                        iledni = 31;
+                        ilezostalo = iledni - dzien;
+
+                    } else if (miesiac == 4) {
+                        iledni = 30;
+                        ilezostalo = iledni - dzien;
+                    } else if (miesiac == 5) {
+                        iledni = 31;
+                        ilezostalo = iledni - dzien;
+                    } else if (miesiac == 6) {
+                        iledni = 30;
+                        ilezostalo = iledni - dzien;
+                    } else if (miesiac == 7) {
+                        iledni = 31;
+                        ilezostalo = iledni - dzien;
+                    } else if (miesiac == 8) {
+                        iledni = 31;
+                        ilezostalo = iledni - dzien;
+                    } else if (miesiac == 9) {
+                        iledni = 30;
+                        ilezostalo = iledni - dzien;
+                    } else if (miesiac == 10) {
+                        iledni = 31;
+                        ilezostalo = iledni - dzien;
+                    } else if (miesiac == 11) {
+                        iledni = 30;
+                        ilezostalo = iledni - dzien;
+                    } else if (miesiac == 12) {
+                        iledni = 31;
                         ilezostalo = iledni - dzien;
                     }
 
-                }
-                else if (miesiac == 3)
 
-                {
-                    iledni = 31;
-                    ilezostalo = iledni - dzien;
-                }
-                else if (miesiac == 4)
+                    if (czydziescidniowy > ilezostalo + 1) {
 
-                {
-                    iledni = 30;
-                    ilezostalo = iledni - dzien;
-                }
-                else if (miesiac == 5)
+                        text.setText("no kurwa oczywiscie ze na 30 dnii");
+                    } else if (czydziescidniowy < ilezostalo + 1) {
 
-                {
-                    iledni = 31;
-                    ilezostalo = iledni - dzien;
-                }
-                else if (miesiac == 6)
+                        text.setText("miesieczny bierz dzbanie");
+                    } else if (czydziescidniowy == ilezostalo + 1) {
 
-                {
-                    iledni = 30;
-                    ilezostalo = iledni - dzien;
-                }
-                else if (miesiac == 7)
-
-                {
-                    iledni = 31;
-                    ilezostalo = iledni - dzien;
-                }
-                else if (miesiac == 8)
-
-                {
-                    iledni = 31;
-                    ilezostalo = iledni - dzien;
-                }
-                else if (miesiac == 9)
-
-                {
-                    iledni = 30;
-                    ilezostalo = iledni - dzien;
-                }
-                else if (miesiac == 10)
-
-                {
-                    iledni = 31;
-                    ilezostalo = iledni - dzien;
-                }
-                else if (miesiac == 11)
-
-                {
-                    iledni = 30;
-                    ilezostalo = iledni - dzien;
-                }
-                else if (miesiac == 12)
-
-                {
-                    iledni = 31;
-                    ilezostalo = iledni - dzien;
-                }
-
-                if(czydziescidniowy>ilezostalo+1)
-
-                {
-
-                    text.setText("no kurwa oczywiscie ze na 30 dni");
-                }
-
-                else if(czydziescidniowy<ilezostalo+1)
-
-                {
-
-                    text.setText("miesieczny bierz dzbanie");
-                }
-
-                else if(czydziescidniowy==ilezostalo+1)
-
-                {
-
-                    text.setText("to bez roznicy");
+                        text.setText("to bez roznicy");
+                    }
                 }
 
             }

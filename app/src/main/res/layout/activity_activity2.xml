@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/pumarancz"
+    android:background="@drawable/gradient"
     tools:context=".activity2">
 
 
@@ -30,6 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
+            android:text="1"
             android:layout_centerVertical="true"
             android:inputType="numberDecimal" />
 
@@ -39,6 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_toLeftOf="@+id/ed1"
+            android:text="1"
             android:inputType="numberDecimal" />
 
         <EditText
@@ -46,6 +48,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
+            android:text="1"
             android:layout_toRightOf="@+id/ed1"
             android:inputType="numberDecimal" />/>
     </RelativeLayout>
